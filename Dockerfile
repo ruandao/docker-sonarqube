@@ -44,6 +44,8 @@ RUN set -x \
     && rm sonarqube.zip* \
     && rm -rf $SONARQUBE_HOME/bin/*
 
+RUN apt-get update && apt-get install -y golang
+
 VOLUME "$SONARQUBE_HOME/data"
 
 WORKDIR $SONARQUBE_HOME
